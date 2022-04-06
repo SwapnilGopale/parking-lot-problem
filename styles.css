@@ -89,3 +89,14 @@ fieldset{
 .parking-lot{
     align-items: center;
 }
+.parking-slot {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background: #000;
+    margin: 5px auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
