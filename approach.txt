@@ -1,6 +1,5 @@
 PL-01 - Create UI for the task
 PL-02 - Create parking functionality
-PL-03 - Create parking functionality
-PL-04 - Park car functionality
-PL-05 - Remove From Parking functionality
-PL-06 - Add queries
+PL-03 - Park car functionality
+PL-04 - Remove From Parking functionality
+PL-05 - Add queries
