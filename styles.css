@@ -1,0 +1,91 @@
+/* Reset CSS */
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p,
+img, form, label, legend,
+section {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+body {
+    line-height:1;
+}
+/* Reset CSS End*/
+fieldset{
+    width: 100%;
+}
+#btn-create::before {
+    content: 'Create Parking Lot';
+}
+#btn-park::before {
+    content: 'Park New Car';
+}
+.row,
+.main-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+}
+.right-section,
+.left-section{
+    display: flex;
+    flex: 50%;
+    height: inherit;
+    padding: 16px;
+    justify-content: center;
+    flex-direction: column;
+}
+.left-section {
+    border-right: 1px solid #fff;
+}
+.section-heading{
+    background-color: #FFFFFF;
+    max-height: 18px;
+    width: 50%;
+    text-align: center !important;
+    margin-top: 15px;
+}
+.btn {
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    border: 2px solid black;
+    background-color: white;
+    color: white;
+    position: relative;
+    letter-spacing: 1px;
+    width: 35%;
+    cursor: pointer;
+}
+.btn::before {
+    position: absolute;
+    top: -14%;
+    left: 7%;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.15s ease-in-out;
+    font-weight: bold;
+}
+   
+.btn:hover::before {
+    top: 0;
+    left: 0;
+}
+.row{
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-top: 18px;
+}
+.parking-lot{
+    align-items: center;
+}
