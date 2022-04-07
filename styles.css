@@ -15,9 +15,6 @@ body {
     line-height:1;
 }
 /* Reset CSS End*/
-fieldset{
-    width: 100%;
-}
 #btn-create::before {
     content: 'Create Parking Lot';
 }
@@ -31,9 +28,12 @@ fieldset{
     content: 'Submit';
 }
 #car-details{
-    max-width: 80%;
     margin: 0 auto;
     display: none;
+}
+#btn-find{
+    background-color: #000;
+    color: #FFFFFF;
 }
 .row,
 .main-section{
@@ -50,9 +50,6 @@ fieldset{
     padding: 16px;
     justify-content: center;
     flex-direction: column;
-}
-.left-section {
-    border-right: 1px solid #fff;
 }
 .section-heading{
     background-color: #FFFFFF;

@@ -5,6 +5,7 @@ const eleCarDetails = document.getElementById('car-details');
 const eleCancelButton = document.getElementById('btn-cancel');
 const eleSubmitButton = document.getElementById('btn-submit');
 const eleRemoveCar = document.getElementById('btn-remove');
+const eleQueryButton = document.getElementById('btn-find');
 eleCreateParkingLot.addEventListener('click',()=>{
     const parkingLotSize = prompt("Please enter parking lot size");
     if(parkingLotSize && !isNaN(parkingLotSize)){
@@ -39,13 +40,29 @@ eleSubmitButton.addEventListener('click',()=>{
     if(!carNumber || !carColor){
         alert("Car number or color can't be empty"); return
     }
-
-    if(parkNewCar(carNumber, carColor)){
+    let ticketNumber = parkNewCar(carNumber, carColor)
+    if(ticketNumber){
         document.getElementById('car-number').value = "";
         document.getElementById('car-color').value = "black";
-        alert('Car Parked Successfully'); return
+        alert(`Car Parked Successfully Ticket Number : ${ticketNumber}`); return
     }
     alert('No Empty Slots')
+})
+
+eleQueryButton.addEventListener('click',()=>{
+    
+    if(!parkingLot){
+        alert('No Parking Lot Created');
+        return
+    }
+    
+    const searchableContent = parkingLot.findIndex(element=>element.occupied != 'empty');
+    if(searchableContent>=0){
+        filterQueries()
+        return
+    }
+    alert('No Car In Parking Yet');
+    
 })
 
 function createNewParkingLot(parkingLotSize){
@@ -74,7 +91,7 @@ function parkNewCar(carNumber, carColor){
     };
     eleParkingSlot.style.background = carColor;
     eleParkingSlot.innerHTML = `<span>Parked - ${carNumber}</span> <button class='btn-remove' onclick="leaveParkingLot(${emptySlot})"> Leave Parking</button>`;
-    return true
+    return ticketNumber
 }
 
 function leaveParkingLot(intId){
@@ -88,4 +105,17 @@ function leaveParkingLot(intId){
     eleParkingSlot.style.background = 'black';
     eleParkingSlot.innerHTML = `<span>empty</span>`;
     alert('Slot has been emptied successfully');
+}
+
+function filterQueries(){
+    const eleQueryResult =  document.getElementById('query-result');
+    const strSelectValue = document.getElementById('select-by').value;
+    const strWhereConditionValue = document.getElementById('where-condition').value;
+    const strWhereValue = document.getElementById('where-text').value;
+    console.log(parkingLot)
+    parkingLot.map(element=>{
+        if(element[strWhereConditionValue] == strWhereValue){
+            eleQueryResult.innerHTML += `<p>${element[strSelectValue]}</p>`;
+        }
+    })
 }

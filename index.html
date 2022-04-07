@@ -18,10 +18,10 @@
                 </div>
                 <fieldset id="car-details">
                     <legend>Add Car Details:</legend>
-                    <label for="car-number">Registration Number:</label>
+                    <label for="car-number">Reg Number:</label>
                         <input type="text" id="car-number">
                     <label for="car-color">Car Color:</label>
-                        <input type="color" id="car-color">
+                        <input type="text" id="car-color">
                     <div class="row">
                         <button id="btn-cancel" class="btn"></button>
                         <button id="btn-submit" class="btn"></button>
@@ -30,6 +30,25 @@
             </fieldset>
             <fieldset>
                 <legend>Queries:</legend>
+                <label for="select-by">Select:</label>
+                    <select id="select-by">
+                        <option value="">Select</option>
+                        <option value="car_reg_num">Register Number</option>
+                        <option value="car_color">Car Color</option>
+                        <option value="ticket_number">Ticket Number</option>
+                    </select>
+                <label for="where-condition">Where:</label>
+                    <select id="where-condition">
+                        <option value="">Select</option>
+                        <option value="car_reg_num">Register Number</option>
+                        <option value="car_color">Car Color</option>
+                        <option value="ticket_number">Ticket Number</option>
+                    </select>
+                    <input type="text" id="where-text">
+                    <button id="btn-find">Find</button>
+                <div class="row">
+                    <div id="query-result"></div>
+                </div>
             </fieldset>
         </div>
         <div class="right-section">
