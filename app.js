@@ -1,4 +1,4 @@
-var parkingLot;
+let parkingLot;
 const eleCreateParkingLot = document.getElementById('btn-create');
 const eleParkNewCar = document.getElementById('btn-park');
 const eleCarDetails = document.getElementById('car-details');
@@ -6,6 +6,7 @@ const eleCancelButton = document.getElementById('btn-cancel');
 const eleSubmitButton = document.getElementById('btn-submit');
 const eleRemoveCar = document.getElementById('btn-remove');
 const eleQueryButton = document.getElementById('btn-find');
+
 eleCreateParkingLot.addEventListener('click',()=>{
     const parkingLotSize = prompt("Please enter parking lot size");
     if(parkingLotSize && !isNaN(parkingLotSize)){
@@ -43,7 +44,7 @@ eleSubmitButton.addEventListener('click',()=>{
     let ticketNumber = parkNewCar(carNumber, carColor)
     if(ticketNumber){
         document.getElementById('car-number').value = "";
-        document.getElementById('car-color').value = "black";
+        document.getElementById('car-color').value = "";
         alert(`Car Parked Successfully Ticket Number : ${ticketNumber}`); return
     }
     alert('No Empty Slots')
@@ -112,7 +113,7 @@ function filterQueries(){
     const strSelectValue = document.getElementById('select-by').value;
     const strWhereConditionValue = document.getElementById('where-condition').value;
     const strWhereValue = document.getElementById('where-text').value;
-    console.log(parkingLot)
+    eleQueryResult.innerHTML = "";
     parkingLot.map(element=>{
         if(element[strWhereConditionValue] == strWhereValue){
             eleQueryResult.innerHTML += `<p>${element[strSelectValue]}</p>`;
