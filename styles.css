@@ -24,6 +24,17 @@ fieldset{
 #btn-park::before {
     content: 'Park New Car';
 }
+#btn-cancel::before {
+    content: 'Cancel';
+}
+#btn-submit::before {
+    content: 'Submit';
+}
+#car-details{
+    max-width: 80%;
+    margin: 0 auto;
+    display: none;
+}
 .row,
 .main-section{
     display: flex;
@@ -85,6 +96,8 @@ fieldset{
     justify-content: space-around;
     align-items: flex-start;
     padding-top: 18px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 .parking-lot{
     align-items: center;
@@ -99,4 +112,11 @@ fieldset{
     align-items: center;
     justify-content: center;
     color: #fff;
+    justify-content: space-around;
+}
+.btn-remove{
+    background-color: rgb(255, 0, 0);
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    cursor: pointer;
 }
