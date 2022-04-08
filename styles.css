@@ -35,6 +35,9 @@ body {
     background-color: #000;
     color: #FFFFFF;
 }
+#parking-lot{
+    text-align: center;
+}
 .row,
 .main-section{
     display: flex;

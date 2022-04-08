@@ -22,14 +22,6 @@ eleParkNewCar.addEventListener('click',()=>{
     eleCarDetails.style.display = 'block';
 })
 
-eleParkNewCar.addEventListener('click',()=>{
-    if(!parkingLot){
-        alert('No Parking Lot Created');
-        return
-    };
-    eleCarDetails.style.display = 'block';
-})
-
 eleCancelButton.addEventListener('click',()=>{
     eleCarDetails.style.display = 'none';
 })
@@ -114,7 +106,7 @@ function filterQueries(){
     const strWhereConditionValue = document.getElementById('where-condition').value;
     const strWhereValue = document.getElementById('where-text').value;
     eleQueryResult.innerHTML = "";
-    parkingLot.map(element=>{
+    parkingLot.filter(element=>{
         if(element[strWhereConditionValue] == strWhereValue){
             eleQueryResult.innerHTML += `<p>${element[strSelectValue]}</p>`;
         }
