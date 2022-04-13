@@ -88,6 +88,7 @@ function parkNewCar(carNumber, carColor){
 }
 
 function leaveParkingLot(intId){
+    if(!confirm("Ready to Move?"))return
     const eleParkingSlot = document.getElementById(`spot-${intId}`);
     parkingLot[intId] = {
         occupied:'empty',
